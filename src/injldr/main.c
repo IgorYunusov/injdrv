@@ -1,3 +1,5 @@
+#define _ARM_WINAPI_PARTITION_DESKTOP_SDK_AVAILABLE 1
+
 #include <stdio.h>
 #include <windows.h>
 #include <evntrace.h>
@@ -179,7 +181,7 @@ DoInstallUninstall(
                       driverLocation,
                       DRIVER_FUNC_INSTALL))
     {
-      printf("Unable to install driver. \n");
+      printf("Unable to install driver.\n");
 
       //
       // Error - remove driver.
@@ -227,6 +229,10 @@ CtrlCHandlerRoutine(
 
 int main(int argc, char* argv[])
 {
+//   LoadLibrary(TEXT("injdllx64.dll"));
+//
+//   return 0;
+//
   SetConsoleCtrlHandler(&CtrlCHandlerRoutine, TRUE);
 
   //
